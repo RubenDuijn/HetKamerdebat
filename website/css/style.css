@@ -77,7 +77,7 @@ body {
 }
 
 .main-nav {
-  margin-top: 0.65rem;
+  margin-top: 0.6rem;
   position: relative;
 }
 
@@ -296,7 +296,6 @@ body {
 
   .brand-row {
     padding: 0.72rem 0.78rem;
-    padding-right: 3.9rem;
   }
 
   .brand-row h1 {
