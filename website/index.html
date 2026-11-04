@@ -28,14 +28,14 @@
           <p class="sample-note">Publieke voorproef. Volledige redactionele publicatie volgt binnenkort.</p>
         </div>
 
-        <details class="main-nav" role="group">
-          <summary class="menu-button" aria-label="Open navigatiemenu">
+        <div class="main-nav" role="group">
+          <button class="menu-button" aria-label="Open navigatiemenu" aria-expanded="false" aria-controls="site-nav">
             <span></span>
             <span></span>
             <span></span>
-          </summary>
+          </button>
 
-          <nav aria-label="Hoofdnavigatie" class="nav-links">
+          <nav id="site-nav" aria-label="Hoofdnavigatie" class="nav-links">
             <a href="#">Home</a>
             <a href="#">Politiek Nieuws</a>
             <a href="#">Tweede Kamer</a>
@@ -45,7 +45,7 @@
             <a href="#">Analyse &amp; Opinie</a>
             <a href="#">Over ons</a>
           </nav>
-        </details>
+        </div>
       </header>
 
       <main>
@@ -119,5 +119,24 @@
         <p>© 2026 HetKamerdebat.nl</p>
       </footer>
     </div>
+    <script>
+      (function () {
+        var navWrap = document.querySelector('.main-nav');
+        var menuButton = document.querySelector('.menu-button');
+        if (!navWrap || !menuButton) return;
+
+        menuButton.addEventListener('click', function () {
+          var isOpen = navWrap.classList.toggle('is-open');
+          menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 1024) {
+            navWrap.classList.remove('is-open');
+            menuButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
