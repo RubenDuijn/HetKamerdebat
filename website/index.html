@@ -21,26 +21,35 @@
       <header class="site-header">
         <div class="brand-row">
           <p class="kicker">ONAFHANKELIJKE POLITIEKE PUBLICATIE</p>
-          <h1>Het Kamerdebat</h1>
+          <div class="brand-nav-row">
+            <h1>Het Kamerdebat</h1>
+            <label class="menu-button" for="nav-toggle" aria-label="Open navigatiemenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
           <p class="tagline">Politiek. Macht. Democratie.</p>
           <p class="sample-note">Publieke launch-preview. Volledige redactionele publicatie volgt binnenkort.</p>
         </div>
 
         <nav aria-label="Hoofdnavigatie" class="main-nav">
-          <a href="#">Home</a>
-          <a href="#">Politiek Nieuws</a>
-          <a href="#">Tweede Kamer</a>
-          <a href="#">Partijen</a>
-          <a href="#">Politici</a>
-          <a href="#">Dossiers</a>
-          <a href="#">Analyse &amp; Opinie</a>
-          <a href="#">Over ons</a>
+          <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+          <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Politiek Nieuws</a>
+            <a href="#">Tweede Kamer</a>
+            <a href="#">Partijen</a>
+            <a href="#">Politici</a>
+            <a href="#">Dossiers</a>
+            <a href="#">Analyse &amp; Opinie</a>
+            <a href="#">Over ons</a>
+          </div>
         </nav>
       </header>
 
       <main>
         <section class="hero" aria-labelledby="hero-headline">
-          <div class="hero-media" role="img" aria-label="Illustratieve visuele header van het platform"></div>
           <div class="hero-copy">
             <p class="section-label">Lancering</p>
             <h2 id="hero-headline">
@@ -50,7 +59,7 @@
               Het Kamerdebat wordt ontwikkeld als een onafhankelijk platform voor Nederlands politiek nieuws,
               onderzoek en analyse.
             </p>
-            <a class="cta" href="#" aria-disabled="true">Eerste publieke preview</a>
+            <p class="launch-status">Eerste publieke preview</p>
           </div>
         </section>
 
