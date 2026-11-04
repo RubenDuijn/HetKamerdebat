@@ -22,6 +22,12 @@ Wat nu aanwezig is:
 - eerste statische homepage in `website/`
 - basis `.gitignore`
 
+Laatste UI-update (2026-11-04):
+
+- mobiele navigatie verfijnd naar compact hamburger-menu
+- taal op homepage geharmoniseerd naar consequent Nederlands
+- spacing en typografische hiërarchie aangescherpt voor 375/390/430 mobiel en desktop
+
 ## Structuur
 
 - `docs/PROJECT_BRIEF.md`: missie, redactionele identiteit, scope en uitgangspunten
