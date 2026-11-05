@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artikelen | Het Kamerdebat</title>
+    <meta
+      name="description"
+      content="Artikelarchief van Het Kamerdebat met analyse, publicatiedatum en doorverwijzing naar volledige stukken."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="brand-row">
+          <p class="kicker">ONAFHANKELIJKE POLITIEKE PUBLICATIE</p>
+          <div class="brand-nav-row">
+            <h1><a class="brand-link" href="index.html">Het Kamerdebat</a></h1>
+          </div>
+          <p class="tagline">Politiek. Macht. Democratie.</p>
+          <p class="sample-note">Artikeloverzicht met bronverifieerbare publicaties.</p>
+        </div>
+      </header>
+
+      <main>
+        <section class="content-section" aria-labelledby="archive-heading">
+          <div class="section-head">
+            <p class="section-label">Publicaties</p>
+            <h2 id="archive-heading">Artikelarchief</h2>
+            <p>
+              Overzicht van gepubliceerde analyses. Elk stuk bevat een expliciete scheiding tussen feiten,
+              interpretatie en redactionele conclusie.
+            </p>
+          </div>
+
+          <div id="archive-list" class="archive-list" aria-live="polite"></div>
+
+          <p class="archive-home-link">
+            <a href="index.html">Terug naar Home</a>
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p><strong>Het Kamerdebat</strong> is een onafhankelijk politiek nieuws- en onderzoeksplatform.</p>
+        <p>Status: publieke voorproef. Redactionele publicatiestromen worden momenteel opgebouwd.</p>
+        <p>© 2026 HetKamerdebat.nl</p>
+      </footer>
+    </div>
+
+    <script type="module">
+      import { renderArchivePage } from "./js/articles.js";
+
+      renderArchivePage().catch((error) => {
+        const listNode = document.querySelector("#archive-list");
+        if (listNode) {
+          listNode.innerHTML = `<p>Archief kon niet worden geladen: ${error.message}</p>`;
+        }
+      });
+    </script>
+  </body>
+</html>
