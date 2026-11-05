@@ -51,7 +51,7 @@
     <script type="module">
       import { renderArticlePage } from "./js/articles.js";
 
-      renderArticlePage({ articlePath: "../content/articles/belastingplan-2027-minderheidskabinet.md" }).catch((error) => {
+      renderArticlePage({ articlePath: "content/articles/belastingplan-2027-minderheidskabinet.md" }).catch((error) => {
         const contentNode = document.querySelector("#article-content");
         if (contentNode) {
           contentNode.innerHTML = `<p>Artikel kon niet worden geladen: ${error.message}</p>`;
