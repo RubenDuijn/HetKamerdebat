@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editorial Preview | Het Kamerdebat</title>
+    <meta
+      name="description"
+      content="Interne editorial preview van drie ongepubliceerde conceptartikelen voor redactionele beoordeling."
+    />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .preview-banner {
+        margin: 0 0 0.9rem;
+        display: inline-block;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        color: #ffd9de;
+        background: rgba(187, 30, 47, 0.2);
+        border: 1px solid rgba(227, 79, 96, 0.55);
+        border-radius: 999px;
+        padding: 0.35rem 0.58rem;
+      }
+
+      .preview-note {
+        margin: 0.35rem 0 1.1rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      .preview-nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        margin-bottom: 1rem;
+      }
+
+      .preview-nav-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+      }
+
+      .preview-nav-item {
+        appearance: none;
+        border: 1px solid var(--stroke);
+        border-radius: 8px;
+        background: rgba(7, 18, 37, 0.56);
+        color: var(--ink);
+        text-align: left;
+        padding: 0.6rem 0.65rem;
+        cursor: pointer;
+        font-size: 0.86rem;
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .preview-nav-item:hover,
+      .preview-nav-item:focus-visible {
+        border-color: var(--accent-soft);
+        background: rgba(187, 30, 47, 0.2);
+      }
+
+      .preview-nav-item[aria-current="true"] {
+        border-color: var(--accent-soft);
+        background: rgba(187, 30, 47, 0.24);
+      }
+
+      .preview-nav-controls {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .preview-ghost-button {
+        appearance: none;
+        border: 1px solid var(--stroke);
+        border-radius: 999px;
+        padding: 0.38rem 0.66rem;
+        color: var(--ink);
+        background: rgba(7, 18, 37, 0.56);
+        font-weight: 700;
+        font-size: 0.82rem;
+        cursor: pointer;
+      }
+
+      .preview-ghost-button:hover,
+      .preview-ghost-button:focus-visible {
+        border-color: var(--accent-soft);
+        background: rgba(187, 30, 47, 0.2);
+      }
+
+      .preview-error {
+        margin-top: 0.75rem;
+        color: #ffd9de;
+      }
+
+      @media (max-width: 940px) {
+        .preview-nav-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="brand-row">
+          <p class="kicker">ONAFHANKELIJKE POLITIEKE PUBLICATIE</p>
+          <div class="brand-nav-row">
+            <h1>Het Kamerdebat</h1>
+          </div>
+          <p class="tagline">Politiek. Macht. Democratie.</p>
+          <p class="sample-note">Editorial previewomgeving voor ongepubliceerde conceptartikelen.</p>
+        </div>
+      </header>
+
+      <main>
+        <section class="content-section" aria-labelledby="preview-heading">
+          <p class="preview-banner">Editorial Preview - Unpublished Draft</p>
+          <h2 id="preview-heading">Conceptartikelen 2027</h2>
+          <p class="preview-note">
+            Deze route toont drie ongepubliceerde redactionele drafts voor review. De pagina is niet gekoppeld
+            aan homepage, publieke navigatie of artikelarchief.
+          </p>
+
+          <nav class="preview-nav" aria-label="Navigatie tussen conceptartikelen">
+            <div id="preview-nav-list" class="preview-nav-list"></div>
+            <div class="preview-nav-controls">
+              <button id="preview-prev" class="preview-ghost-button" type="button">Vorige draft</button>
+              <button id="preview-next" class="preview-ghost-button" type="button">Volgende draft</button>
+            </div>
+          </nav>
+
+          <article class="analysis-article" aria-labelledby="article-title">
+            <p class="preview-banner">Editorial Preview - Unpublished Draft</p>
+            <p id="article-meta" class="section-label"></p>
+            <h2 id="article-title"></h2>
+            <p id="article-summary" class="article-intro"></p>
+            <div id="article-content"></div>
+            <p id="preview-error" class="preview-error" hidden></p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p><strong>Het Kamerdebat</strong> is een onafhankelijk politiek nieuws- en onderzoeksplatform.</p>
+        <p>Editorial preview omgeving - niet opgenomen in publieke index of navigatie.</p>
+        <p>© 2026 HetKamerdebat.nl</p>
+      </footer>
+    </div>
+
+    <script type="module">
+      import { renderArticlePage } from "../js/articles.js";
+
+      const DRAFTS = [
+        {
+          id: "draft-belastingplan-2027",
+          label: "Belastingplan 2027",
+          path: "../content/articles/draft-belastingplan-2027.md"
+        },
+        {
+          id: "draft-klimaatbegroting-2027",
+          label: "Klimaatbegroting 2027",
+          path: "../content/articles/draft-klimaatbegroting-2027.md"
+        },
+        {
+          id: "draft-politieke-machtsverhoudingen-2027",
+          label: "Politieke machtsverhoudingen 2027",
+          path: "../content/articles/draft-politieke-machtsverhoudingen-2027.md"
+        }
+      ];
+
+      const navListNode = document.querySelector("#preview-nav-list");
+      const prevButton = document.querySelector("#preview-prev");
+      const nextButton = document.querySelector("#preview-next");
+      const errorNode = document.querySelector("#preview-error");
+      const query = new URLSearchParams(window.location.search);
+      const selected = query.get("draft");
+      let currentIndex = Math.max(
+        0,
+        DRAFTS.findIndex((item) => item.id === selected)
+      );
+
+      if (currentIndex < 0) {
+        currentIndex = 0;
+      }
+
+      function updateDraftQuery(id) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("draft", id);
+        window.history.replaceState({}, "", url);
+      }
+
+      function setError(message) {
+        if (!errorNode) {
+          return;
+        }
+        if (!message) {
+          errorNode.hidden = true;
+          errorNode.textContent = "";
+          return;
+        }
+
+        errorNode.hidden = false;
+        errorNode.textContent = message;
+      }
+
+      function renderNav() {
+        if (!navListNode) {
+          return;
+        }
+
+        navListNode.innerHTML = DRAFTS.map((draft, index) => {
+          const isCurrent = index === currentIndex;
+          return `<button type="button" class="preview-nav-item" data-index="${index}" aria-current="${isCurrent ? "true" : "false"}">${draft.label}</button>`;
+        }).join("");
+
+        for (const button of navListNode.querySelectorAll(".preview-nav-item")) {
+          button.addEventListener("click", () => {
+            const index = Number(button.getAttribute("data-index"));
+            if (Number.isNaN(index)) {
+              return;
+            }
+            currentIndex = index;
+            updateDraftQuery(DRAFTS[currentIndex].id);
+            loadCurrentDraft();
+          });
+        }
+      }
+
+      async function loadCurrentDraft() {
+        const draft = DRAFTS[currentIndex];
+        setError("");
+        renderNav();
+
+        try {
+          await renderArticlePage({ articlePath: draft.path });
+        } catch (error) {
+          setError(`Draft kon niet worden geladen: ${error.message}`);
+        }
+      }
+
+      prevButton?.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + DRAFTS.length) % DRAFTS.length;
+        updateDraftQuery(DRAFTS[currentIndex].id);
+        loadCurrentDraft();
+      });
+
+      nextButton?.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % DRAFTS.length;
+        updateDraftQuery(DRAFTS[currentIndex].id);
+        loadCurrentDraft();
+      });
+
+      updateDraftQuery(DRAFTS[currentIndex].id);
+      loadCurrentDraft();
+    </script>
+  </body>
+</html>
