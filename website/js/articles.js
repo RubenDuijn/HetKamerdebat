@@ -8,6 +8,18 @@ const ARTICLE_ARCHIVE = [
   {
     path: "../content/articles/second-article.md",
     href: "article-van-motie-tot-uitvoering.html"
+  },
+  {
+    path: "../content/articles/belastingplan-2027-minderheidskabinet.md",
+    href: "article-belastingplan-2027-minderheidskabinet.html"
+  },
+  {
+    path: "../content/articles/moties-stemmingen-politieke-verantwoordelijkheid.md",
+    href: "article-moties-stemmingen-politieke-verantwoordelijkheid.html"
+  },
+  {
+    path: "../content/articles/klimaatbegroting-2027.md",
+    href: "article-klimaatbegroting-2027.html"
   }
 ];
 
