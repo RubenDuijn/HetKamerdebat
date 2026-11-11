@@ -23,19 +23,47 @@ human_editorial_approval: "required"
 ## Subtitle
 Na het debat van 5 november zijn op 10 november moties aangenomen en verworpen die de regering politiek richting geven op netinfrastructuur, kernenergie en betaalbaarheid, zonder dat daarmee uitvoering al vastligt.
 
-## Korte introductie met nieuwsangle
-Het centrale nieuws is dat de begrotingsbehandeling van Klimaat en Groene Groei (37 020-XXIII) niet meer in een open tussenfase zit: de Kamer heeft op 10 november over een groot pakket moties gestemd. Daarbij kregen voorstellen over netcongestieaanpak, SMR-locatieverkenningen en uitvoerbaarheidstoetsen een meerderheid, terwijl meerdere voorstellen voor brede prijsverlagingen op energie geen meerderheid haalden. (S4, S5)
+## Wat er is besloten, en waarom dit ertoe doet
+De Tweede Kamer heeft op 10 november richting gegeven aan het klimaat- en energiebeleid voor 2027. Niet met een nieuw totaalakkoord, maar via een serie moties die op onderdelen sturen: netcongestie, kernenergie, betaalbaarheid en de inzet van publieke steun. (S4, S5)
 
-## Wat gebeurde er tijdens de begrotingsbehandeling?
+Voor huishoudens en bedrijven is dat relevant omdat de keuzes van nu bepalen welke maatregelen de regering de komende maanden moet uitwerken. Denk aan de druk op het stroomnet, de vraag of energiekosten worden gedempt, en de vraag welke technologieen wel of niet steun krijgen.
+
+Tegelijk is de kern van deze stemronde dat parlementaire steun nog geen uitgevoerd beleid is. Een aangenomen motie is een politieke opdracht aan het kabinet. Juridische uitwerking, budgettaire dekking en uitvoering volgen pas in vervolgbesluiten, bijvoorbeeld richting Voorjaarsnota en latere begrotingsmomenten.
+
+De opvallendste politieke breuklijn zat bij BECCS op houtige biomassa: de aangepaste motie daarover werd met 73 tegen 71 aangenomen. Die krappe uitslag laat zien hoe verdeeld de Kamer is, ook binnen bredere politieke blokken. (S5, S18, S19)
+
+## Politieke duiding in gewone taal
+
+### 1) Netcongestie: wel extra gereedschap, geen snelle systeemdoorbraak
+De Kamer steunde meerdere voorstellen om de vastgelopen netaansluitingen aan te pakken: betere datadeling, steun voor mkb-oplossingen, onderzoek naar nettarieven en meer inzicht in netbelasting in gebieden met (dreigende) aansluitstops. Dat helpt vooral bij coördinatie en keuzes op korte termijn. Maar het lost de structurele bottlenecks in vergunningen, bouwtempo en netuitbreiding niet automatisch op. (S5, S6, S8, S20, S23)
+
+### 2) Kernenergie/SMR: versnellen op papier is nog geen bouwstart
+De Kamer steunt zowel versnelling van SMR-uitrol als concrete locatieverkenningen. Dat vergroot de politieke prioriteit van kernopties. Tegelijk blijft de stap naar realisatie groot: vergunningen, financiering, veiligheidskaders en netinpassing moeten nog worden uitgewerkt. De besluiten gaan nu dus vooral over voorbereiding en route, niet over directe bouw. (S5, S7, S21)
+
+### 3) Betaalbaarheid: gerichte steun krijgt ruimte, brede prijsingrepen niet
+De stemmingen laten een gemengd beeld zien. Er is steun voor gerichte lijnen, zoals hulp bij "verborgen" energiearmoede en onderzoek naar social-lease voor warmtepompen. Maar brede prijsmaatregelen zoals btw-verlaging naar 9% en een permanent energieplafond kregen geen meerderheid. Voor burgers en bedrijven betekent dit: wel gerichte interventies in beeld, maar geen brede en directe prijsverlaging via een overkoepelend pakket. (S5, S9, S11, S12, S13, S17, S24)
+
+### 4) Politieke scheidslijnen: krappe marges, uiteenlopende coalities
+De stemmingen laten geen enkelvoudige links-rechtslijn zien. Dat werd het scherpst zichtbaar bij BECCS: FVD stemde daar, net als onder meer JA21, PVV en SP, voor de motie om nieuwe publieke steun op houtige biomassa te blokkeren, terwijl onder meer D66, CDA en ChristenUnie tegen stemden. Ook niet-deelname speelde zichtbaar mee in het stembeeld. Deze uitslag zegt veel over de spanning rond biomassa, maar is niet automatisch een eindbesluit over bestaande regelingen of lopende projecten. (S18, S19)
+
+### 5) Wat dit in de praktijk betekent, en wat nog niet
+De Kamer heeft politieke richting gegeven, maar nog niet de uitvoering afgerond. De komende vraag is of het kabinet de opdrachten vertaalt in juridisch houdbare maatregelen, met budgettaire dekking en uitvoerbare planning. Dat is het verschil tussen een aangenomen motie en daadwerkelijk effect op energierekening, netaansluiting of investeringszekerheid.
+
+## Feitelijk dossier (controleerbaar)
+
+### 1) Begrotingscijfers en financiele kaders
+
 - Op 5 november 2026 werd het plenaire debat over 37 020-XXIII en 37 020-M voortgezet. (S1)
 - In de begrotingsstukken blijft de financiële omvang substantieel: geraamde uitgaven €14.881,8 miljoen en geraamde ontvangsten €9.561,0 miljoen. (S3)
-- Voor de openstelling 2027 is binnen het jaarlijkse kader van €8 miljard een splitsing opgenomen: €7,25 miljard voor SDE++ en €750 miljoen voor CfD-rondes voor hernieuwbare elektriciteitsproductie op land. (S3)
+- Voor de openstelling 2027 is binnen het jaarlijkse kader van €8 miljard een splitsing opgenomen: €7,25 miljard voor SDE++ (subsidiekader voor CO2-reductietechnologie) en €750 miljoen voor CfD-rondes (contract for difference, prijszekerheidsinstrument) voor hernieuwbare elektriciteitsproductie op land. (S3)
 - De begroting maakt expliciet onderscheid tussen openstellingsbudgetten, subsidiebeschikkingen/verplichtingen en feitelijke kasuitgaven per jaar; die lopen in tijd en omvang niet automatisch gelijk. (S3)
 
-## Wat besloot de Kamer op 10 november?
+### 2) Moties, amendementen en indieners (dossieroverzicht)
 De stemmingsuitslagenfilter voor 37020-XXIII toont nu een officieel stemmingsdossier met besluiten op moties: 2026P18380. (S4, S5)
 
-### Aangenomen kernmoties rond netcongestie, SMR en betaalbaarheid
+Het amendementenoverzicht bij hetzelfde dossier is afzonderlijk beschikbaar en blijft relevant voor de verdere budgettaire uitwerking. (S2)
+
+#### Aangenomen kernmoties rond netcongestie, SMR en betaalbaarheid
 - **37020-XXIII-22 (Müller, VVD): Aangenomen.**
   - Verzoek om geld beschikbaar te stellen voor projectvoorstellen die het mkb ondersteunen bij oplossingen voor netcongestie. (S5, S20)
   - Betekenis: naast systeemmaatregelen ook een instrument op bedrijfsniveau, gericht op uitvoerbare projecten bij kleinere ondernemingen.
@@ -72,7 +100,7 @@ De stemmingsuitslagenfilter voor 37020-XXIII toont nu een officieel stemmingsdos
   - Motietekst (beslissend deel): "verzoekt de regering bij nieuwe klimaatmaatregelen (...) de uitvoerbaarheid, betaalbaarheid en gevolgen voor het verdienvermogen en de weerbaarheid te borgen" en daarnaast "ook een impactanalyse uit te laten voeren" naast klimaateffectdoorrekening. (S5, S9)
   - Betekenis: aangescherpte toetsingslijn voor nieuwe maatregelen; procedurele sturing, geen directe beleidsintrekking.
 
-### Andere relevante uitkomsten
+#### Andere relevante uitkomsten
 - **37020-XXIII-14 (Klos c.s., D66 e.a.): Aangenomen** (onderzoek naar social-leaseopties voor aanschaf of huur van een warmtepomp). (S5, S24)
 - **37020-XXIII-19 (Kops, PVV): Aangenomen** (verborgen energiearmoede en Noodfonds Energie). (S5, S11)
 - **37020-XXIII-29 (El Abassi, DENK): Verworpen** (stoppen met bewust hoog houden van belastingen en heffingen op gas). (S5, S12)
@@ -80,28 +108,10 @@ De stemmingsuitslagenfilter voor 37020-XXIII toont nu een officieel stemmingsdos
 - **37020-XXIII-48 (gewijzigde Kostić c.s., t.v.v. nr. 36): Aangenomen (73-71)** over geen publieke financiële ondersteuning voor BECCS op houtige biomassa. (S5, S15)
   - Motietekst (beslissend deel): "verzoekt de regering geen (nieuwe) subsidieregelingen of andere vormen van publieke financiële ondersteuning open te stellen voor BECCS op basis van houtige biomassa en de bestaande grens van 100 MW voor BECCS binnen de SDE++ niet te verruimen". (S15)
 
-## Politieke betekenis van de besluiten
+### 3) Stemmingsuitslagen en partijverdelingen
+De belangrijkste stemmingsuitkomsten in dit dossier laten steun zien voor gerichte net- en uitvoeringsmaatregelen, maar verdeeldheid over brede prijsmaatregelen en over biomassa/BECCS. (S5)
 
-### A. Netcongestie en energie-infrastructuur
-De meerderheid kiest hier voor een combinatie van bestuurlijke, juridische en praktische ingrepen: datadeling juridisch mogelijk maken (23), mkb-projecten financieren (22), nettarievenvarianten onderzoeken (26) en lokaal netinzicht verbeteren in gebieden met (dreigende) aansluitstops (38). Dat adresseert vooral coördinatie, informatiepositie en kostenverdeling; de fysieke doorlooptijd van netverzwaring, vergunningverlening en bouwcapaciteit blijft daarmee niet automatisch opgelost. (S5, S6, S8, S20, S23)
-
-### B. Kernenergie en SMR's
-De aangenomen SMR-moties combineren **tempoverhoging** (15) met **locatieverkenning en ontwikkelpad** (24), maar gaan niet over onmiddellijke bouw of finale investeringsbesluiten. Politiek is dit relevant omdat meerdere partijen kernopties verder naar voren schuiven in de beleidsvoorfase. Praktisch blijven vergunningen, financiering, veiligheidskaders en netinpassing nog open. (S5, S7, S21)
-
-### C. Betaalbaarheid en energiekosten
-De stemmingen laten geen eenduidige Kamerlijn zien, maar verschillende politieke benaderingen van betaalbaarheid:
-- **Directe huishoudondersteuning:** motie 19 (Kops) over "verborgen" energiearmoede en toegang tot het Noodfonds Energie is aangenomen.
-- **Gerichte ondersteuning en social-lease-instrumenten:** motie 14 (Klos c.s.) over onderzoek naar social-leaseopties voor warmtepompen is aangenomen.
-- **Generieke prijsverlaging via belastingen/plafonds:** moties 21 (btw naar 9%), 29 (gasheffingen), 40 (btw naar 9%) en 41 (permanent energieplafond) zijn verworpen.
-- **Nettarief- en systeemkostenroute:** motie 26 (onderzoek varianten om nettarieven te dempen) is aangenomen.
-- **Brede toetsing van nieuw beleid:** gewijzigde motie 46 (impactanalyse op uitvoerbaarheid/betaalbaarheid/verdienvermogen) is aangenomen.
-
-Daarmee is de uitkomst vooral: de Kamer wijst betaalbaarheidsmaatregelen niet af als geheel, maar kiest wel selectief voor gerichte instrumenten en onderzoeks-/toetsingsroutes, terwijl brede generieke prijsmaatregelen geen meerderheid halen. Er is dus geen gezamenlijke meerderheid voor één overkoepelende betaalbaarheidsstrategie. (S5, S9, S11, S12, S13, S17, S24)
-
-### D. Capaciteitsmechanisme en systeemsturing
-Met motie 28 vraagt de Kamer om de contouren van een capaciteitsmechanisme nog voor de voorjaarsbesluitvorming te ontvangen. Dat verbreedt de besluitvorming van losse maatregelen naar systeemsturing: hoe leveringszekerheid, marktprikkels en budgettaire keuzes samen moeten landen in de volgende begrotingsrondes. (S5, S22)
-
-### E. BECCS als scherppunt (motie 48)
+### 4) BECCS-besluit en stemdetails (motie 48)
 De gewijzigde motie-Kostić c.s. over BECCS op houtige biomassa is aangenomen met 73 tegen 71 stemmen in een **hoofdelijke stemming**. Het verzoek richt zich op het niet openstellen van nieuwe publieke ondersteuning en het niet verruimen van de 100 MW-grens binnen de SDE++. (S15, S18)
 
 Uit de officiële stemdata blijkt een uitgesproken tweedeling, met zichtbare niet-deelname in enkele fracties:
@@ -111,16 +121,16 @@ Uit de officiële stemdata blijkt een uitgesproken tweedeling, met zichtbare nie
 
 Politiek betekent dit dat biomassa/BECCS niet alleen langs coalitie-oppositie loopt. De hoofdelijke stemming laat zien hoe klein de marge was en maakt ook de niet-deelname van Kamerleden zichtbaar. Beleidsmatig blijft gelden: een aangenomen motie is een parlementaire opdracht; bestaande beschikkingen, subsidies of lopende projecten wijzigen pas na concrete kabinets- en uitvoeringsbesluiten. (S18, S19)
 
-## Wat blijft onopgelost?
+### 5) Openstaande beleidsvragen
 - De stemmingsuitslagen in het geraadpleegde dossier tonen vooral motiebesluiten; voor amendementen is in deze filterset nog geen afzonderlijk, vergelijkbaar besluitoverzicht gevonden.
 - Voor meerdere aangenomen moties is de precieze budgettaire doorwerking nog niet zichtbaar in deze fase. (S2, S5)
 
-## Wat gebeurt er hierna?
+### 6) Wat volgt in besluitvorming en uitvoering?
 - Kabinetsreacties en uitvoeringsbrieven bepalen of en hoe aangenomen moties worden omgezet in concrete beleidsdaden.
 - Bij Voorjaarsnota en vervolgbegrotingen moet blijken welke aangenomen verzoeken financieel en juridisch worden ingepast.
 - Voor lezers is het cruciale onderscheid: **aangenomen motie = politieke opdracht/uitspraak; uitvoering vereist vervolgbesluiten van kabinet en soms aanvullende wet- of regelgeving**.
 
-## Context: waarom PBL hier relevant blijft
+### 7) Context voor duiding: PBL en doelbereik
 PBL houdt de druk op het debat hoog: de KEV 2025 rekent voor het basispad op circa 45-53% emissiereductie in 2030 en noemt de kans op het wettelijke 55%-doel kleiner dan 5% binnen die modellering. Dat verklaart waarom de Kamer tegelijk stuurt op tempo, uitvoerbaarheid en betaalbaarheid. (S14)
 
 ## Volledig bronnenregister
