@@ -23,6 +23,52 @@ const ARTICLE_ARCHIVE = [
   }
 ];
 
+const EDITORIAL_FORMAT_LABELS = {
+  NEWS: "NEWS",
+  POLITICAL_ANALYSIS: "POLITICAL ANALYSIS",
+  BACKGROUND: "BACKGROUND",
+  POLITICAL_ESSAY: "POLITICAL ESSAY / POLITIEKE BESCHOUWING"
+};
+
+function normalizeEditorialFormat(frontMatter = {}) {
+  const raw = String(frontMatter.editorial_format || "").trim().toUpperCase();
+
+  if (raw === "NEWS") {
+    return "NEWS";
+  }
+  if (raw === "POLITICAL_ANALYSIS" || raw === "POLITICAL ANALYSIS") {
+    return "POLITICAL_ANALYSIS";
+  }
+  if (raw === "BACKGROUND") {
+    return "BACKGROUND";
+  }
+  if (
+    raw === "POLITICAL_ESSAY" ||
+    raw === "POLITICAL ESSAY" ||
+    raw === "POLITIEKE_BESCHOUWING" ||
+    raw === "POLITIEKE BESCHOUWING"
+  ) {
+    return "POLITICAL_ESSAY";
+  }
+
+  const category = String(frontMatter.category || "").toLowerCase();
+  if (category.includes("nieuws") || category.includes("news")) {
+    return "NEWS";
+  }
+  if (category.includes("achtergrond") || category.includes("background")) {
+    return "BACKGROUND";
+  }
+  if (category.includes("beschouwing") || category.includes("essay")) {
+    return "POLITICAL_ESSAY";
+  }
+
+  return "POLITICAL_ANALYSIS";
+}
+
+function formatEditorialFormatLabel(format) {
+  return EDITORIAL_FORMAT_LABELS[format] || EDITORIAL_FORMAT_LABELS.POLITICAL_ANALYSIS;
+}
+
 function parseFrontMatter(raw) {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   if (!match) {
@@ -91,6 +137,16 @@ function formatInline(text) {
   return html;
 }
 
+function slugifyHeading(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/<[^>]*>/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 function markdownToHtml(markdown) {
   const lines = markdown.split("\n");
   const chunks = [];
@@ -98,6 +154,7 @@ function markdownToHtml(markdown) {
   let paragraphLines = [];
   let listType = null;
   let listItems = [];
+  let quoteLines = [];
 
   function flushParagraph() {
     if (!paragraphLines.length) {
@@ -108,6 +165,18 @@ function markdownToHtml(markdown) {
       chunks.push(`<p>${formatInline(text)}</p>`);
     }
     paragraphLines = [];
+  }
+
+  function flushQuote() {
+    if (!quoteLines.length) {
+      return;
+    }
+
+    const quoteHtml = quoteLines
+      .map((line) => `<p>${formatInline(line)}</p>`)
+      .join("");
+    chunks.push(`<blockquote>${quoteHtml}</blockquote>`);
+    quoteLines = [];
   }
 
   function flushList() {
@@ -129,6 +198,7 @@ function markdownToHtml(markdown) {
     if (!line) {
       flushParagraph();
       flushList();
+      flushQuote();
       continue;
     }
 
@@ -136,11 +206,24 @@ function markdownToHtml(markdown) {
     if (heading) {
       flushParagraph();
       flushList();
+      flushQuote();
       const level = heading[1].length;
       const headingText = heading[2].trim();
-      chunks.push(`<h${level}>${formatInline(headingText)}</h${level}>`);
+      const headingId = slugifyHeading(headingText);
+      const idAttr = headingId ? ` id="${escapeHtml(headingId)}"` : "";
+      chunks.push(`<h${level}${idAttr}>${formatInline(headingText)}</h${level}>`);
       continue;
     }
+
+    const blockquoteLine = line.match(/^>\s?(.*)$/);
+    if (blockquoteLine) {
+      flushParagraph();
+      flushList();
+      quoteLines.push(blockquoteLine[1]);
+      continue;
+    }
+
+    flushQuote();
 
     const orderedItem = line.match(/^\d+\.\s+(.+)$/);
     if (orderedItem) {
@@ -170,6 +253,7 @@ function markdownToHtml(markdown) {
 
   flushParagraph();
   flushList();
+  flushQuote();
 
   return chunks.join("\n");
 }
@@ -225,15 +309,19 @@ export async function renderArticlePage({
   titleSelector = "#article-title",
   metaSelector = "#article-meta",
   contentSelector = "#article-content",
-  summarySelector = "#article-summary"
+  summarySelector = "#article-summary",
+  articleSelector = ".analysis-article"
 } = {}) {
   const article = await loadArticle(articlePath);
   const { frontMatter, htmlBody, markdownBody, readTimeMinutes } = article;
+  const editorialFormat = normalizeEditorialFormat(frontMatter);
+  const editorialFormatLabel = formatEditorialFormatLabel(editorialFormat);
 
   const titleNode = document.querySelector(titleSelector);
   const metaNode = document.querySelector(metaSelector);
   const summaryNode = document.querySelector(summarySelector);
   const contentNode = document.querySelector(contentSelector);
+  const articleNode = document.querySelector(articleSelector);
 
   if (titleNode) {
     titleNode.textContent = frontMatter.title || "Ongetitelde publicatie";
@@ -251,7 +339,7 @@ export async function renderArticlePage({
   if (metaNode) {
     const category = frontMatter.category || "Publicatie";
     const date = formatDutchDate(frontMatter.published_at);
-    metaNode.textContent = `${category}${date ? ` · ${date}` : ""} · ${readTimeMinutes} min leestijd`;
+    metaNode.textContent = `${editorialFormatLabel} · ${category}${date ? ` · ${date}` : ""} · ${readTimeMinutes} min leestijd`;
   }
 
   if (summaryNode) {
@@ -262,14 +350,21 @@ export async function renderArticlePage({
     contentNode.innerHTML = htmlBody;
   }
 
+  if (articleNode) {
+    articleNode.setAttribute("data-editorial-format", editorialFormat);
+    articleNode.classList.toggle("analysis-article--essay", editorialFormat === "POLITICAL_ESSAY");
+  }
+
   return { ...article, markdownBody };
 }
 
 export async function renderArchivePage({
   articles = ARTICLE_ARCHIVE,
-  listSelector = "#archive-list"
+  listSelector = "#archive-list",
+  filterSelector = "#archive-format-filter"
 } = {}) {
   const listNode = document.querySelector(listSelector);
+  const filterNode = document.querySelector(filterSelector);
 
   if (!listNode) {
     return [];
@@ -278,7 +373,11 @@ export async function renderArchivePage({
   const loaded = await Promise.all(
     articles.map(async ({ path, href }) => {
       const article = await loadArticle(path);
-      return { ...article, href };
+      return {
+        ...article,
+        href,
+        editorialFormat: normalizeEditorialFormat(article.frontMatter)
+      };
     })
   );
 
@@ -289,20 +388,63 @@ export async function renderArchivePage({
     return bDate - aDate;
   });
 
-  listNode.innerHTML = loaded
-    .map(({ frontMatter, readTimeMinutes, href }) => {
-      const date = formatDutchDate(frontMatter.published_at);
-      return `
-        <article class="archive-card">
-          <p class="meta">${escapeHtml(frontMatter.category || "Publicatie")}</p>
+  function renderList(items) {
+    listNode.innerHTML = items
+      .map(({ frontMatter, readTimeMinutes, href, editorialFormat }) => {
+        const formatLabel = formatEditorialFormatLabel(editorialFormat);
+        const category = frontMatter.category || "Publicatie";
+        const combinedMeta = `${formatLabel} · ${category}`;
+        const readLabel =
+          editorialFormat === "BACKGROUND"
+            ? "Lees achtergrond"
+            : editorialFormat === "POLITICAL_ESSAY"
+              ? "Lees politieke beschouwing"
+              : "Lees volledige publicatie";
+        const date = formatDutchDate(frontMatter.published_at);
+        return `
+        <article class="archive-card" data-editorial-format="${escapeHtml(editorialFormat)}">
+          <p class="archive-format-chip">${escapeHtml(formatLabel)}</p>
+          <p class="meta">${escapeHtml(combinedMeta)}</p>
           <h3>${escapeHtml(frontMatter.title || "Ongetitelde publicatie")}</h3>
           <p class="archive-summary">${escapeHtml(frontMatter.summary || "")}</p>
           <p class="archive-meta">${escapeHtml(date)} · ${readTimeMinutes} min leestijd</p>
-          <a class="archive-link" href="${escapeHtml(href)}">Lees volledige analyse</a>
+          <a class="archive-link" href="${escapeHtml(href)}">${readLabel}</a>
         </article>
       `;
-    })
-    .join("");
+      })
+      .join("");
+  }
+
+  renderList(loaded);
+
+  if (filterNode) {
+    const filterOptions = [
+      { value: "ALL", label: "Alles" },
+      { value: "NEWS", label: "NEWS" },
+      { value: "POLITICAL_ANALYSIS", label: "POLITICAL ANALYSIS" },
+      { value: "BACKGROUND", label: "BACKGROUND" },
+      { value: "POLITICAL_ESSAY", label: "POLITICAL ESSAY" }
+    ];
+
+    filterNode.innerHTML = filterOptions
+      .map(
+        ({ value, label }) =>
+          `<button type="button" class="archive-filter-button" data-format-filter="${value}"${value === "ALL" ? ' aria-pressed="true"' : ' aria-pressed="false"'}>${label}</button>`
+      )
+      .join("");
+
+    for (const button of filterNode.querySelectorAll(".archive-filter-button")) {
+      button.addEventListener("click", () => {
+        const format = button.getAttribute("data-format-filter") || "ALL";
+        for (const candidate of filterNode.querySelectorAll(".archive-filter-button")) {
+          candidate.setAttribute("aria-pressed", candidate === button ? "true" : "false");
+        }
+
+        const filtered = format === "ALL" ? loaded : loaded.filter((item) => item.editorialFormat === format);
+        renderList(filtered);
+      });
+    }
+  }
 
   return loaded;
 }

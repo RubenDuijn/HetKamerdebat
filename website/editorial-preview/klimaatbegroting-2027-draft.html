@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editorial Preview | Klimaatbegroting 2027 Draft | Het Kamerdebat</title>
+    <meta
+      name="description"
+      content="Ongepubliceerde editorial preview van de draft Klimaatbegroting 2027 voor redactionele beoordeling."
+    />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .preview-banner {
+        margin: 0 0 0.9rem;
+        display: inline-block;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        color: #ffd9de;
+        background: rgba(187, 30, 47, 0.2);
+        border: 1px solid rgba(227, 79, 96, 0.55);
+        border-radius: 999px;
+        padding: 0.35rem 0.58rem;
+      }
+
+      .preview-note {
+        margin: 0.35rem 0 1rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      .preview-error {
+        margin-top: 0.75rem;
+        color: #ffd9de;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="brand-row">
+          <p class="kicker">ONAFHANKELIJKE POLITIEKE PUBLICATIE</p>
+          <div class="brand-nav-row">
+            <h1><a class="brand-link" href="../index.html">Het Kamerdebat</a></h1>
+          </div>
+          <p class="tagline">Politiek. Macht. Democratie.</p>
+          <p class="sample-note">Editorial previewomgeving - ongepubliceerde conceptpublicatie.</p>
+        </div>
+      </header>
+
+      <main>
+        <article class="analysis-article" aria-labelledby="article-title">
+          <div class="article-actions" aria-label="Artikelnavigatie">
+            <a href="./index.html?draft=draft-klimaatbegroting-2027">Terug naar editorial previewoverzicht</a>
+          </div>
+          <p class="preview-banner">Editorial Preview - Unpublished Draft</p>
+          <p class="preview-note">
+            Deze pagina is een niet-gepubliceerde redactionele preview en staat niet in homepage,
+            artikelarchief of publieke navigatie.
+          </p>
+          <p id="article-meta" class="section-label"></p>
+          <h2 id="article-title"></h2>
+          <p id="article-summary" class="article-intro"></p>
+          <div id="article-content"></div>
+          <p id="preview-error" class="preview-error" hidden></p>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <p><strong>Het Kamerdebat</strong> is een onafhankelijk politiek nieuws- en onderzoeksplatform.</p>
+        <p>Editorial preview omgeving - niet opgenomen in publieke index of navigatie.</p>
+        <p>© 2026 HetKamerdebat.nl</p>
+      </footer>
+    </div>
+
+    <script type="module">
+      import { renderArticlePage } from "../js/articles.js";
+
+      const errorNode = document.querySelector("#preview-error");
+
+      renderArticlePage({ articlePath: "../content/articles/draft-klimaatbegroting-2027.md" }).catch((error) => {
+        if (errorNode) {
+          errorNode.hidden = false;
+          errorNode.textContent = `Draft kon niet worden geladen: ${error.message}`;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -28,6 +28,8 @@ Editorial orientation:
 
 - duidelijk pro-FVD georiënteerd in opinie en analyse
 - geen formele vertegenwoordiging van FVD tenzij expliciet bevestigd en openbaar gemaakt
+- geen automatische validatie van FVD-claims; verificatie blijft verplicht
+- relevante tegenargumenten en alternatieve verklaringen worden structureel meegewogen
 
 ## 4. Redactionele standaarden
 

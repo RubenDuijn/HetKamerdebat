@@ -18,6 +18,13 @@ Deze strategie definieert welke content we publiceren, voor wie en hoe de public
 - Bronbasis: primaire documenten plus ondersteunende data.
 - Vorm: argumentatieve uitleg met expliciete scheiding tussen feit en interpretatie.
 
+### Political Essay / Politieke Beschouwing
+
+- Doel: onderzoeken hoe politieke keuzes, waarschuwingen en omissies uit eerdere jaren doorwerken in het heden.
+- Bronbasis: primaire documenten, historische parlementaire uitspraken, officiële data en controleerbare contextbronnen.
+- Vorm: essayistische opbouw met centrale these, historische voorbeelden, tegenargumenten en expliciete causaliteitsduiding.
+- Redactionele eis: onderscheid tussen correlatie, bijdrage en bewezen causaliteit is verplicht.
+
 ### Opinion
 
 - Doel: redactionele en auteursstandpunten helder formuleren.

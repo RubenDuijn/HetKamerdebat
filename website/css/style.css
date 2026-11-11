@@ -361,6 +361,63 @@ body {
   color: #ffd1d7;
 }
 
+.analysis-article blockquote {
+  margin: 1rem 0 1.15rem;
+  padding: 0.7rem 0.85rem;
+  border-left: 4px solid rgba(227, 79, 96, 0.7);
+  background: rgba(7, 18, 37, 0.56);
+}
+
+.analysis-article blockquote p {
+  margin: 0;
+  color: #f2dce0;
+  font-size: 1.02rem;
+  line-height: 1.68;
+}
+
+.analysis-article--essay {
+  padding: 1.2rem 1.12rem;
+}
+
+.analysis-article--essay h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  line-height: 1.14;
+  max-width: 30ch;
+}
+
+.analysis-article--essay h3 {
+  margin-top: 1.45rem;
+  font-size: 1.22rem;
+}
+
+.analysis-article--essay p {
+  font-size: 1.05rem;
+  line-height: 1.72;
+  max-width: 72ch;
+}
+
+.analysis-article--essay ul,
+.analysis-article--essay ol {
+  max-width: 72ch;
+}
+
+.analysis-article--essay .article-intro {
+  border-left-width: 4px;
+  border-left-color: rgba(245, 194, 116, 0.85);
+  background: rgba(245, 194, 116, 0.06);
+  padding: 0.5rem 0.78rem;
+}
+
+.analysis-article--essay blockquote {
+  border-left-color: rgba(245, 194, 116, 0.85);
+  background: linear-gradient(165deg, rgba(245, 194, 116, 0.12), rgba(20, 28, 49, 0.72));
+}
+
+.analysis-article--essay blockquote p {
+  font-family: "Merriweather", serif;
+  font-size: 1.08rem;
+}
+
 .article-intro {
   border-left: 3px solid rgba(227, 79, 96, 0.7);
   padding-left: 0.72rem;
@@ -371,12 +428,69 @@ body {
   gap: 0.8rem;
 }
 
+.archive-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.82rem;
+}
+
+.archive-filter-button {
+  appearance: none;
+  border: 1px solid var(--stroke);
+  background: rgba(7, 18, 37, 0.56);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.34rem 0.72rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.archive-filter-button[aria-pressed="true"] {
+  border-color: var(--accent-soft);
+  background: rgba(187, 30, 47, 0.2);
+}
+
+.archive-filter-button:hover,
+.archive-filter-button:focus-visible {
+  border-color: var(--accent-soft);
+}
+
 .archive-card {
   border: 1px solid var(--stroke);
   border-radius: 8px;
   background: linear-gradient(170deg, rgba(24, 41, 71, 0.92), rgba(16, 30, 56, 0.9));
   padding: 0.9rem;
   box-shadow: 0 6px 16px var(--shadow);
+}
+
+.archive-format-chip {
+  margin: 0 0 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  border: 1px solid rgba(227, 79, 96, 0.45);
+  border-radius: 999px;
+  padding: 0.16rem 0.58rem;
+  background: rgba(187, 30, 47, 0.17);
+  color: #f9d7dc;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.archive-card[data-editorial-format="POLITICAL_ESSAY"] {
+  border-color: rgba(227, 79, 96, 0.5);
+  background: linear-gradient(165deg, rgba(34, 26, 43, 0.93), rgba(19, 26, 47, 0.92));
+}
+
+.archive-card[data-editorial-format="POLITICAL_ESSAY"] .archive-format-chip {
+  border-color: rgba(245, 194, 116, 0.55);
+  background: rgba(245, 194, 116, 0.13);
+  color: #f5dcab;
 }
 
 .archive-card h3 {
